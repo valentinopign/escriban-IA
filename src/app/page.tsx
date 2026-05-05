@@ -1,9 +1,6 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import Nav from "@/components/Nav";
-import Hero from "@/components/Hero";
-import Diagram from "@/components/Diagram";
+import HeroSection from "@/components/HeroSection";
 import ProcessSection from "@/components/ProcessSection";
 import AdminPanelSection from "@/components/AdminPanelSection";
 import PricingSection from "@/components/PricingSection";
@@ -14,15 +11,11 @@ import Footer from "@/components/Footer";
 import "./landing.css";
 
 export default function Home() {
-  const [isAnimationFinished, setIsAnimationFinished] = useState(false);
-
   return (
     <>
       <Nav />
       <main>
-        <Hero isAnimationFinished={isAnimationFinished}>
-          <Diagram onAnimationEnd={() => setIsAnimationFinished(true)} />
-        </Hero>
+        <HeroSection />
         <ProblemSection />
         <UseCaseSection />
         <ProcessSection />

@@ -13,11 +13,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EscribanIA — Digitalizá tu escribanía con IA",
+  title: "escribanIA — Digitalizá tu escribanía con IA",
   description: "Del DNI al .docx en minutos. Tu cliente sube las fotos, la IA extrae los datos, audita y genera el documento. Vos lo firmás.",
   icons: {
     icon: "/favicon.png",
     apple: "/favicon.png",
+  },
+  openGraph: {
+    title: "escribanIA — Digitalizá tu escribanía con IA",
+    description: "Del DNI al .docx en minutos. Tu cliente sube las fotos, la IA extrae los datos, audita y genera el documento. Vos lo firmás.",
+    url: "https://escriban-ia.com.ar",
+    siteName: "escribanIA",
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "escribanIA — Digitalizá tu escribanía con IA",
+    description: "Del DNI al .docx en minutos. Tu cliente sube las fotos, la IA extrae los datos, audita y genera el documento. Vos lo firmás.",
   },
 };
 

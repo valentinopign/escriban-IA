@@ -1264,6 +1264,37 @@
   background: linear-gradient(180deg, rgba(var(--accent-glow), 0.1), rgba(var(--accent-glow), 0.02));
 }
 
+.pricingCardPro {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.015));
+  position: relative;
+}
+
+.pricingCardPro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+}
+
+.pricingCardPro:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+}
+
+.pricingCardPro .pricingCardPrice {
+  color: var(--ink);
+}
+
+.pricingCardPro .pricingFeatures li:first-child,
+.pricingCardFeatured .pricingFeatures li:first-child {
+  color: var(--ink);
+  font-weight: 500;
+}
+
 .pricingCardTopLine {
   position: absolute;
   top: 0;
@@ -1289,6 +1320,9 @@
 }
 
 .pricingBadge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
   font-family: var(--font-geist-mono), monospace;
   font-size: 9px;
   font-weight: 600;
@@ -1378,11 +1412,17 @@
   margin-bottom: 12px;
 }
 
+.pricingPriceExtraEmpty {
+  height: 16px;
+  margin-bottom: 12px;
+}
+
 .pricingCardDesc {
   font-size: 12.5px;
   color: var(--ink-2);
   line-height: 1.5;
   margin-bottom: 10px;
+  min-height: calc(12.5px * 1.5 * 2);
 }
 
 .pricingCallout {

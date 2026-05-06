@@ -5,7 +5,6 @@ const WA = 'https://wa.me/541123808166?text=';
 const plans = [
   {
     id: 'basico',
-    tag: 'NODE · 01 · ENTRY',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
@@ -29,7 +28,6 @@ const plans = [
   },
   {
     id: 'estandar',
-    tag: 'NODE · 02 · STANDARD',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/>
@@ -41,8 +39,9 @@ const plans = [
     priceExtra: '+ $900 por trámite adicional',
     ideal: 'Ideal para escribanías con flujo constante de operaciones.',
     desc: 'Hasta 100 trámites incluidos. El plan más elegido.',
-    callout: null,
+    callout: 'A partir de 100 trámites/mes, Pro te conviene más →',
     features: [
+      'Todo lo de Básico, incluido',
       '100 trámites/mes incluidos',
       'Panel Administrativo completo',
       'Gestión de clientes (CRM)',
@@ -54,7 +53,6 @@ const plans = [
   },
   {
     id: 'pro',
-    tag: 'NODE · 03 · PRO',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
@@ -63,12 +61,13 @@ const plans = [
     name: 'Pro',
     price: '$54.999',
     unit: '/mes',
-    priceExtra: null,
+    priceExtra: 'Sin costo por trámite adicional',
     ideal: 'Ideal para grandes escribanías y registros con alto volumen.',
     desc: 'Trámites ilimitados. Para estudios que no pueden permitirse fricciones.',
     callout: null,
     features: [
-      'Trámites ilimitados',
+      'Todo lo de Estándar, incluido',
+      'Trámites ilimitados, sin techo',
       'API personalizada e integración',
       'Implementación y capacitación In-Situ',
       'Account Manager dedicado',
@@ -93,16 +92,13 @@ const PricingSection = () => {
 
       <div className="pricingGrid">
         {plans.map((plan) => (
-          <div key={plan.id} className={`pricingCard${plan.featured ? ' pricingCardFeatured' : ''}`}>
+          <div key={plan.id} className={`pricingCard${plan.featured ? ' pricingCardFeatured' : ''}${plan.id === 'pro' ? ' pricingCardPro' : ''}`}>
             {plan.featured && <div className="pricingCardTopLine" />}
 
-            {/* Row 1 */}
-            <div className="pricingCardHeader">
-              <div className="pricingCardTag">{plan.tag}</div>
-              {plan.badge && <span className="pricingBadge">{plan.badge}</span>}
-            </div>
+            {/* Badge — absolute, no afecta el flujo */}
+            {plan.badge && <span className="pricingBadge">{plan.badge}</span>}
 
-            {/* Row 2 */}
+            {/* Row 1 */}
             <div className="pricingCardIcon">{plan.icon}</div>
 
             {/* Row 3 */}

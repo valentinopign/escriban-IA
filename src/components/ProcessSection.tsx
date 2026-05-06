@@ -151,7 +151,7 @@ const ProcessSection = () => {
         <div className="processIntro">
           <div className="sectionEyebrow processEyebrow">SIMPLICIDAD OPERATIVA</div>
           <h2 className="processTitle">Tu proceso,<br/><span className="accent">optimizado.</span></h2>
-          <p className="processLead">Digitalizamos tu flujo de trabajo sin cambiar tu forma de redactar. Una transición invisible hacia la máxima eficiencia.</p>
+          <p className="processLead">Digitalizamos el flujo de trabajo de tu escribanía sin cambiar tu forma de redactar. Software notarial con IA para una transición invisible hacia la máxima eficiencia.</p>
         </div>
         
         <div className="processCards" style={{ position: 'relative' }}>

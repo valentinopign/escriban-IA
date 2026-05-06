@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -34,6 +35,25 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'escribanIA',
+  url: 'https://escriban-ia.com.ar',
+  description: 'Software de automatización notarial con inteligencia artificial. Del DNI al .docx en minutos.',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  offers: [
+    { '@type': 'Offer', price: '2000', priceCurrency: 'ARS', name: 'Básico' },
+    { '@type': 'Offer', price: '34999', priceCurrency: 'ARS', name: 'Estándar' },
+    { '@type': 'Offer', price: '54999', priceCurrency: 'ARS', name: 'Pro' },
+  ],
+  audience: {
+    '@type': 'Audience',
+    audienceType: 'Escribanos y escribanías de Argentina',
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,11 +61,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <div className="grid-bg" />
         <div className="vignette" />
         <div className="noise" />
         {children}
+        <Analytics />
       </body>
     </html>
   );

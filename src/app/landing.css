@@ -312,17 +312,15 @@
 }
 
 .problemStatNum {
-  font-size: 44px;
-  font-weight: 500;
-  color: var(--accent);
-  letter-spacing: -0.02em;
   line-height: 1;
-  text-shadow: 0 0 20px rgba(var(--accent-glow), 0.4);
+  letter-spacing: -0.02em;
 }
 
-.problemStatNum span {
-  font-size: 24px;
-  margin-left: 2px;
+.problemStatGran {
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--accent);
+  text-shadow: 0 0 20px rgba(var(--accent-glow), 0.4);
 }
 
 .problemStatLabel {
@@ -1229,9 +1227,52 @@
   margin: 0 auto;
 }
 
+.pricingCardPriceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.pricingCardPriceStrike {
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: var(--ink-3);
+  text-decoration: line-through;
+  text-decoration-color: rgba(255,255,255,0.3);
+}
+
+.pricingCardPriceStrike .pricingUnit {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-3);
+}
+
+.pricingCardPriceFree {
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+  text-shadow: 0 0 24px rgba(var(--accent-glow), 0.4);
+}
+
+.pricingCardPriceFreeUnit {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--ink-3);
+}
+
+.pricingTrialNote {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
 .pricingGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   align-items: stretch;
 }
@@ -1289,8 +1330,7 @@
   color: var(--ink);
 }
 
-.pricingCardPro .pricingFeatures li:first-child,
-.pricingCardFeatured .pricingFeatures li:first-child {
+.pricingCardPro .pricingFeatures li:first-child {
   color: var(--ink);
   font-weight: 500;
 }
@@ -1497,12 +1537,13 @@
   background: rgba(var(--accent-glow), 0.1);
   border-color: var(--accent);
   color: var(--accent);
-  box-shadow: 0 0 16px rgba(var(--accent-glow), 0.2);
+  box-shadow: 0 0 20px rgba(var(--accent-glow), 0.3), inset 0 0 10px rgba(var(--accent-glow), 0.1);
+  animation: button-glow 3s ease-in-out infinite;
 }
 
 .pricingCtaFeatured:hover {
   background: rgba(var(--accent-glow), 0.18);
-  box-shadow: 0 0 28px rgba(var(--accent-glow), 0.4);
+  box-shadow: 0 0 35px rgba(var(--accent-glow), 0.6), inset 0 0 15px rgba(var(--accent-glow), 0.2);
 }
 
 .pricingTrust {
@@ -1659,6 +1700,7 @@
 
 @media (max-width: 960px) {
   .pricingGrid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+
   .pricingSection { padding: 80px 20px; }
   .pricingTrust { flex-direction: column; gap: 8px; }
   .pricingTrustDot { display: none; }

@@ -9,7 +9,9 @@ const ProblemSection = () => {
           <h2 className="problemTitle">Tu escribanía<br/>pierde tiempo<br/><span className="accent">todos los días.</span></h2>
           <p className="problemLead">Los procesos manuales consumen horas de tu equipo y generan riesgos legales innecesarios. La automatización notarial con inteligencia artificial elimina ese cuello de botella para siempre.</p>
           <div className="problemStat">
-            <div className="problemStatNum">92<span>%</span></div>
+            <div className="problemStatNum">
+              <span className="problemStatGran">MUCHOS</span>
+            </div>
             <div className="problemStatLabel">DE LOS ERRORES EN DOCUMENTOS<br/>SON DE ORIGEN ADMINISTRATIVO.</div>
           </div>
         </div>

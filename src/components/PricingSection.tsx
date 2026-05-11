@@ -4,29 +4,6 @@ const WA = 'https://wa.me/541123808166?text=';
 
 const plans = [
   {
-    id: 'basico',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-      </svg>
-    ),
-    name: 'Básico',
-    price: '$2.000',
-    unit: 'por trámite',
-    priceExtra: null,
-    ideal: 'Ideal para escribanías que empiezan o con bajo volumen mensual.',
-    desc: 'Sin abono mensual. Pagás solo cuando usás el sistema. Sin mínimos ni compromisos.',
-    callout: 'A partir de 18 trámites/mes, Estándar te conviene más →',
-    features: [
-      'OCR de DNI + validación de vencimiento',
-      'Análisis de personería',
-      'Redacción de borrador en Word',
-      'Sin mínimos ni compromisos',
-    ],
-    href: WA + encodeURIComponent('Hola, quiero solicitar acceso al plan Básico de escribanIA.'),
-    featured: false,
-  },
-  {
     id: 'estandar',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -38,10 +15,10 @@ const plans = [
     unit: '/mes',
     priceExtra: '+ $900 por trámite adicional',
     ideal: 'Ideal para escribanías con flujo constante de operaciones.',
-    desc: 'Hasta 100 trámites incluidos. El plan más elegido.',
+    desc: '',
     callout: 'A partir de 100 trámites/mes, Pro te conviene más →',
     features: [
-      'Todo lo de Básico, incluido',
+      'OCR de DNI + validación de vencimiento',
       '100 trámites/mes incluidos',
       'Panel Administrativo completo',
       'Gestión de clientes (CRM)',
@@ -50,6 +27,7 @@ const plans = [
     href: WA + encodeURIComponent('Hola, quiero solicitar acceso al plan Estándar de escribanIA.'),
     featured: true,
     badge: 'Popular',
+    trial: true,
   },
   {
     id: 'pro',
@@ -74,6 +52,7 @@ const plans = [
     ],
     href: WA + encodeURIComponent('Hola, quiero solicitar acceso al plan Pro de escribanIA.'),
     featured: false,
+    trial: false,
   },
 ];
 
@@ -95,54 +74,60 @@ const PricingSection = () => {
           <div key={plan.id} className={`pricingCard${plan.featured ? ' pricingCardFeatured' : ''}${plan.id === 'pro' ? ' pricingCardPro' : ''}`}>
             {plan.featured && <div className="pricingCardTopLine" />}
 
-            {/* Badge — absolute, no afecta el flujo */}
             {plan.badge && <span className="pricingBadge">{plan.badge}</span>}
 
-            {/* Row 1 */}
             <div className="pricingCardIcon">{plan.icon}</div>
 
-            {/* Row 3 */}
             <div className="pricingCardMeta">
               <div className="pricingCardName">{plan.name}</div>
               <div className="pricingCardIdeal">{plan.ideal}</div>
             </div>
 
-            {/* Row 4 */}
             <div className="pricingCardPriceBlock">
-              <div className="pricingCardPrice">
-                {plan.price}<span className="pricingUnit">{plan.unit}</span>
-              </div>
-              {plan.priceExtra
-                ? <div className="pricingPriceExtra">{plan.priceExtra}</div>
-                : <div className="pricingPriceExtraEmpty" />
-              }
+              {plan.trial ? (
+                <>
+                  <div className="pricingCardPriceRow">
+                    <div className="pricingCardPriceStrike">
+                      {plan.price}<span className="pricingUnit">{plan.unit}</span>
+                    </div>
+                    <div className="pricingCardPriceFree">Gratis <span className="pricingCardPriceFreeUnit">· 1 mes</span></div>
+                  </div>
+                  <div className="pricingTrialNote">30 días · trámites limitados · para nuevas escribanías</div>
+                </>
+              ) : (
+                <>
+                  <div className="pricingCardPrice">
+                    {plan.price}<span className="pricingUnit">{plan.unit}</span>
+                  </div>
+                  {plan.priceExtra
+                    ? <div className="pricingPriceExtra">{plan.priceExtra}</div>
+                    : <div className="pricingPriceExtraEmpty" />
+                  }
+                </>
+              )}
             </div>
 
-            {/* Row 5 */}
             <p className="pricingCardDesc">{plan.desc}</p>
 
-            {/* Row 6 — always rendered, empty if no callout */}
             <div className="pricingCalloutSlot">
               {plan.callout && (
                 <div className="pricingCallout">{plan.callout}</div>
               )}
             </div>
 
-            {/* Row 7 */}
             <ul className="pricingFeatures">
               {plan.features.map((f, i) => (
                 <li key={i}>{f}</li>
               ))}
             </ul>
 
-            {/* Row 8 */}
             <a
               href={plan.href}
               target="_blank"
               rel="noopener noreferrer"
               className={`pricingCta${plan.featured ? ' pricingCtaFeatured' : ''}`}
             >
-              Solicitar acceso →
+              {plan.trial ? 'Empezar gratis →' : 'Solicitar acceso →'}
             </a>
           </div>
         ))}

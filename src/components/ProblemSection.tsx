@@ -10,9 +10,9 @@ const ProblemSection = () => {
           <p className="problemLead">Los procesos manuales consumen horas de tu equipo y generan riesgos legales innecesarios. La automatización notarial con inteligencia artificial elimina ese cuello de botella para siempre.</p>
           <div className="problemStat">
             <div className="problemStatNum">
-              <span className="problemStatGran">MUCHOS</span>
+              <span className="problemStatGran">~20 min</span>
             </div>
-            <div className="problemStatLabel">DE LOS ERRORES EN DOCUMENTOS<br/>SON DE ORIGEN ADMINISTRATIVO.</div>
+            <div className="problemStatLabel">SE PIERDEN EN PROMEDIO POR TRÁMITE<br/>EN CARGA MANUAL DE DATOS.</div>
           </div>
         </div>
         <div className="problemCards">

@@ -144,7 +144,7 @@ const UseCaseSection = () => {
           <h3 className="usecaseCtaH">¿Necesitás un trámite específico?</h3>
           <p className="usecaseCtaP">Cada documento nuevo son <span className="hl">~20 líneas de código</span>. Lo hacemos sin costo porque nos ayudamos a crecer mutuamente.</p>
         </div>
-        <button className="usecaseCtaBtn">PEDÍ TU TRÁMITE <span aria-hidden="true">→</span></button>
+        <a href="https://wa.me/541123808166?text=Hola%2C%20quiero%20consultar%20por%20un%20tr%C3%A1mite%20espec%C3%ADfico." target="_blank" rel="noopener noreferrer" className="usecaseCtaBtn">PEDÍ TU TRÁMITE <span aria-hidden="true">→</span></a>
       </div>
     </section>
   );

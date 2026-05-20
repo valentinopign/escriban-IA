@@ -27,6 +27,14 @@ export const metadata: Metadata = {
     siteName: "escribanIA",
     locale: "es_AR",
     type: "website",
+    images: [
+      {
+        url: "https://escriban-ia.com.ar/og-image.png",
+        width: 1024,
+        height: 1024,
+        alt: "escribanIA — Automatización notarial con IA",
+      },
+    ],
   },
   twitter: {
     card: "summary",
@@ -44,7 +52,6 @@ const jsonLd = {
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
   offers: [
-    { '@type': 'Offer', price: '2000', priceCurrency: 'ARS', name: 'Básico' },
     { '@type': 'Offer', price: '34999', priceCurrency: 'ARS', name: 'Estándar' },
     { '@type': 'Offer', price: '54999', priceCurrency: 'ARS', name: 'Pro' },
   ],

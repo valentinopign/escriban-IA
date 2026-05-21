@@ -21,7 +21,6 @@ const Nav = () => {
     <>
       <nav className="nav">
         <div className="brand">
-          <div className="logo"></div>
           <div className="brandName">escriban<b>IA</b></div>
         </div>
 

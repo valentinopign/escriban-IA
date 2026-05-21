@@ -61,6 +61,18 @@ const FaqSection = () => {
           </div>
         ))}
       </div>
+
+      {/* Respuestas visibles para crawlers sin JS */}
+      <noscript>
+        <dl>
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <dt>{faq.q}</dt>
+              <dd>{faq.a}</dd>
+            </div>
+          ))}
+        </dl>
+      </noscript>
     </section>
   );
 };

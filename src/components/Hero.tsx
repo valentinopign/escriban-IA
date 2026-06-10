@@ -14,7 +14,7 @@ const Hero = ({ children, isAnimationFinished }: HeroProps) => {
       {children}
 
       <div className="heroCtas">
-        <a href={`https://wa.me/541123808166?text=${encodeURIComponent('Hola, quiero solicitar acceso a escribanIA.')}`} target="_blank" rel="noopener noreferrer" className={`btnPrimary ${isAnimationFinished ? 'glow' : ''}`}>
+        <a href={`https://wa.me/541170605707?text=${encodeURIComponent('Hola, quiero solicitar acceso a escribanIA.')}`} target="_blank" rel="noopener noreferrer" className={`btnPrimary ${isAnimationFinished ? 'glow' : ''}`}>
           Solicitar acceso →
         </a>
         <a href="#proceso" className="btnSecondary">Ver cómo funciona</a>

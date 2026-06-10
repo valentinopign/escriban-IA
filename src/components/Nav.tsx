@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-const WA = `https://wa.me/541123808166?text=${encodeURIComponent('Hola, quiero solicitar acceso a escribanIA.')}`;
+const WA = `https://wa.me/541170605707?text=${encodeURIComponent('Hola, quiero solicitar acceso a escribanIA.')}`;
 
 const links = [
   { label: 'El problema', href: '#problema' },

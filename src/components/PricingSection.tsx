@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WA = 'https://wa.me/541123808166?text=';
+const WA = 'https://wa.me/541170605707?text=';
 
 const plans = [
   {

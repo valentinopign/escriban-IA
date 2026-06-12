@@ -1272,7 +1272,7 @@
 
 .pricingGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   align-items: stretch;
 }
@@ -1333,6 +1333,60 @@
 .pricingCardPro .pricingFeatures li:first-child {
   color: var(--ink);
   font-weight: 500;
+}
+
+.pricingCardAMedida {
+  border-color: rgba(201, 162, 39, 0.35);
+  background: linear-gradient(180deg, rgba(201, 162, 39, 0.06), rgba(201, 162, 39, 0.01));
+}
+
+.pricingCardAMedida:hover {
+  border-color: rgba(201, 162, 39, 0.6);
+  background: linear-gradient(180deg, rgba(201, 162, 39, 0.09), rgba(201, 162, 39, 0.02));
+}
+
+.pricingCardAMedida .pricingCardTopLine {
+  background: linear-gradient(90deg, transparent, #c9a227, transparent);
+}
+
+.pricingCardAMedida .pricingCardIcon {
+  border-color: rgba(201, 162, 39, 0.4);
+  background: rgba(201, 162, 39, 0.1);
+  color: #c9a227;
+}
+
+.pricingCardAMedida .pricingFeatures li:first-child {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.pricingCardPriceQuote {
+  font-size: 34px;
+  font-weight: 500;
+  color: #c9a227;
+  text-shadow: 0 0 24px rgba(201, 162, 39, 0.3);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.pricingBadgePremium {
+  color: #c9a227 !important;
+  border-color: rgba(201, 162, 39, 0.5) !important;
+  background: rgba(201, 162, 39, 0.08) !important;
+  box-shadow: 0 0 10px rgba(201, 162, 39, 0.15) !important;
+}
+
+.pricingCtaAMedida {
+  background: rgba(201, 162, 39, 0.08);
+  border-color: rgba(201, 162, 39, 0.6);
+  color: #c9a227;
+}
+
+.pricingCtaAMedida:hover {
+  background: rgba(201, 162, 39, 0.15);
+  border-color: #c9a227;
+  box-shadow: 0 0 28px rgba(201, 162, 39, 0.35);
+  color: #c9a227;
 }
 
 .pricingCardTopLine {
@@ -1696,6 +1750,10 @@
 @media (max-width: 980px) {
   .problemGrid { grid-template-columns: 1fr; gap: 50px; }
   .problemCards { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 1100px) {
+  .pricingGrid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 960px) {

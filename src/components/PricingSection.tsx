@@ -2,7 +2,23 @@ import React from 'react';
 
 const WA = 'https://wa.me/541170605707?text=';
 
-const plans = [
+const plans: {
+  id: string;
+  icon: React.ReactNode;
+  name: string;
+  price: string;
+  unit: string;
+  priceExtra: string;
+  ideal: string;
+  desc: string;
+  callout: string | null;
+  features: string[];
+  href: string;
+  featured: boolean;
+  badge: string | null;
+  trial: boolean;
+  custom?: boolean;
+}[] = [
   {
     id: 'estandar',
     icon: (
@@ -52,7 +68,35 @@ const plans = [
     ],
     href: WA + encodeURIComponent('Hola, quiero solicitar acceso al plan Pro de escribanIA.'),
     featured: false,
+    badge: null,
     trial: false,
+  },
+  {
+    id: 'amedida',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M12 2l2.09 4.26L18 7.27l-3 2.92.71 4.13L12 12.18l-3.71 1.95.71-4.13-3-2.92 3.91-.57L12 2z"/><circle cx="12" cy="19" r="2"/><path d="M12 15v2"/>
+      </svg>
+    ),
+    name: 'A Medida',
+    price: 'A cotizar',
+    unit: '',
+    priceExtra: 'Precio según requerimientos',
+    ideal: 'Para escribanías que necesitan una solución propia y completamente personalizada.',
+    desc: 'Construimos exactamente lo que necesitás. Sin límites, sin compromisos predefinidos.',
+    callout: null,
+    features: [
+      'Todo lo de Pro, incluido',
+      'Desarrollo y configuración 100% personalizada',
+      'Integraciones y flujos diseñados para vos',
+      'Solución propia y única',
+      'Acompañamiento continuo del equipo técnico',
+    ],
+    href: WA + encodeURIComponent('Hola quiero cotizar el plan a medida'),
+    featured: false,
+    badge: 'Premium',
+    trial: false,
+    custom: true,
   },
 ];
 
@@ -71,10 +115,10 @@ const PricingSection = () => {
 
       <div className="pricingGrid">
         {plans.map((plan) => (
-          <div key={plan.id} className={`pricingCard${plan.featured ? ' pricingCardFeatured' : ''}${plan.id === 'pro' ? ' pricingCardPro' : ''}`}>
-            {plan.featured && <div className="pricingCardTopLine" />}
+          <div key={plan.id} className={`pricingCard${plan.featured ? ' pricingCardFeatured' : ''}${plan.id === 'pro' ? ' pricingCardPro' : ''}${plan.id === 'amedida' ? ' pricingCardAMedida' : ''}`}>
+            {(plan.featured || plan.custom) && <div className="pricingCardTopLine" />}
 
-            {plan.badge && <span className="pricingBadge">{plan.badge}</span>}
+            {plan.badge && <span className={`pricingBadge${plan.custom ? ' pricingBadgePremium' : ''}`}>{plan.badge}</span>}
 
             <div className="pricingCardIcon">{plan.icon}</div>
 
@@ -93,6 +137,11 @@ const PricingSection = () => {
                     <div className="pricingCardPriceFree">Gratis <span className="pricingCardPriceFreeUnit">· 1 mes</span></div>
                   </div>
                   <div className="pricingTrialNote">30 días · trámites limitados · para nuevas escribanías</div>
+                </>
+              ) : plan.custom ? (
+                <>
+                  <div className="pricingCardPriceQuote">{plan.price}</div>
+                  <div className="pricingPriceExtra">{plan.priceExtra}</div>
                 </>
               ) : (
                 <>
@@ -125,9 +174,9 @@ const PricingSection = () => {
               href={plan.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`pricingCta${plan.featured ? ' pricingCtaFeatured' : ''}`}
+              className={`pricingCta${plan.featured ? ' pricingCtaFeatured' : ''}${plan.custom ? ' pricingCtaAMedida' : ''}`}
             >
-              {plan.trial ? 'Empezar gratis →' : 'Solicitar acceso →'}
+              {plan.trial ? 'Empezar gratis →' : plan.custom ? 'Cotizar ahora →' : 'Solicitar acceso →'}
             </a>
           </div>
         ))}

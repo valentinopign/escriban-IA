@@ -34,10 +34,10 @@ const plans: {
     desc: '',
     callout: 'A partir de 100 trámites/mes, Pro te conviene más →',
     features: [
-      'OCR de DNI + validación de vencimiento',
+      'Lectura automática de DNI y control de vencimiento',
       '100 trámites/mes incluidos',
       'Panel Administrativo completo',
-      'Gestión de clientes (CRM)',
+      'Gestión de clientes',
       'Soporte prioritario por WhatsApp',
     ],
     href: WA + encodeURIComponent('Hola, quiero solicitar acceso al plan Estándar de escribanIA.'),
@@ -62,8 +62,8 @@ const plans: {
     features: [
       'Todo lo de Estándar, incluido',
       'Trámites ilimitados, sin techo',
-      'API personalizada e integración',
-      'Implementación y capacitación In-Situ',
+      'Conexión con tus sistemas actuales',
+      'Capacitación personalizada',
       'Account Manager dedicado',
     ],
     href: WA + encodeURIComponent('Hola, quiero solicitar acceso al plan Pro de escribanIA.'),
@@ -134,17 +134,20 @@ const PricingSection = () => {
                     <div className="pricingCardPriceStrike">
                       {plan.price}<span className="pricingUnit">{plan.unit}</span>
                     </div>
-                    <div className="pricingCardPriceFree">Gratis <span className="pricingCardPriceFreeUnit">· 1 mes</span></div>
+                    <span className="pricingDiscountBadge">57% OFF</span>
                   </div>
-                  <div className="pricingTrialNote">30 días · trámites limitados · para nuevas escribanías</div>
+                  <div className="pricingCardPriceFree">$15.000 <span className="pricingCardPriceFreeUnit">· 1er mes</span></div>
+                  <div className="pricingTrialNote">Precio especial de lanzamiento · para nuevas escribanías</div>
                 </>
               ) : plan.custom ? (
                 <>
+                  <div className="pricingPriceRowSpacer" />
                   <div className="pricingCardPriceQuote">{plan.price}</div>
                   <div className="pricingPriceExtra">{plan.priceExtra}</div>
                 </>
               ) : (
                 <>
+                  <div className="pricingPriceRowSpacer" />
                   <div className="pricingCardPrice">
                     {plan.price}<span className="pricingUnit">{plan.unit}</span>
                   </div>
@@ -176,7 +179,7 @@ const PricingSection = () => {
               rel="noopener noreferrer"
               className={`pricingCta${plan.featured ? ' pricingCtaFeatured' : ''}${plan.custom ? ' pricingCtaAMedida' : ''}`}
             >
-              {plan.trial ? 'Empezar gratis →' : plan.custom ? 'Cotizar ahora →' : 'Solicitar acceso →'}
+              {plan.trial ? 'Comenzar por $15.000 →' : plan.custom ? 'Cotizar ahora →' : 'Solicitar acceso →'}
             </a>
           </div>
         ))}

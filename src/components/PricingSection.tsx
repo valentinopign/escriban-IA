@@ -134,9 +134,9 @@ const PricingSection = () => {
                     <div className="pricingCardPriceStrike">
                       {plan.price}<span className="pricingUnit">{plan.unit}</span>
                     </div>
-                    <span className="pricingDiscountBadge">57% OFF</span>
+                    <span className="pricingDiscountBadge">75% OFF</span>
                   </div>
-                  <div className="pricingCardPriceFree">$15.000 <span className="pricingCardPriceFreeUnit">· 1er mes</span></div>
+                  <div className="pricingCardPriceFree">$9.999 <span className="pricingCardPriceFreeUnit">· 1er mes</span></div>
                   <div className="pricingTrialNote">Precio especial de lanzamiento · para nuevas escribanías</div>
                 </>
               ) : plan.custom ? (

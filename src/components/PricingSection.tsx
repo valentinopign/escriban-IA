@@ -179,7 +179,7 @@ const PricingSection = () => {
               rel="noopener noreferrer"
               className={`pricingCta${plan.featured ? ' pricingCtaFeatured' : ''}${plan.custom ? ' pricingCtaAMedida' : ''}`}
             >
-              {plan.trial ? 'Comenzar por $15.000 →' : plan.custom ? 'Cotizar ahora →' : 'Solicitar acceso →'}
+              {plan.trial ? 'Comenzar por $9.999 →' : plan.custom ? 'Cotizar ahora →' : 'Solicitar acceso →'}
             </a>
           </div>
         ))}

@@ -186,6 +186,36 @@
   z-index: 10;
 }
 
+.heroTrust {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15.5px;
+  color: var(--ink-2);
+  position: relative;
+  z-index: 10;
+}
+
+.heroTrustDots {
+  display: flex;
+  align-items: center;
+}
+
+.heroTrustDot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.55;
+  border: 2px solid var(--bg);
+  margin-left: -10px;
+}
+
+.heroTrustDot:first-child {
+  margin-left: 0;
+}
+
 .btnPrimary {
   background: rgba(var(--accent-glow), 0.1);
   color: var(--accent);
@@ -1810,6 +1840,7 @@
   .heroSubtitle { font-size: 15px; }
   .heroCtas { flex-direction: column; width: 100%; margin-top: 40px; gap: 10px; }
   .heroCtas a, .heroCtas button { width: 100%; text-align: center; }
+  .heroTrust { margin-top: 22px; text-align: center; justify-content: center; }
 
   /* Diagram */
   .diagramWrap { aspect-ratio: 16 / 11; }

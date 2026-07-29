@@ -19,6 +19,15 @@ const Hero = ({ children, isAnimationFinished }: HeroProps) => {
         </a>
         <a href="#proceso" className="btnSecondary">Ver cómo funciona</a>
       </div>
+
+      <div className="heroTrust">
+        <span className="heroTrustDots">
+          <span className="heroTrustDot" />
+          <span className="heroTrustDot" />
+          <span className="heroTrustDot" />
+        </span>
+        +10 oficinas de escribanos ya confiaron en nosotros
+      </div>
     </section>
   );
 };

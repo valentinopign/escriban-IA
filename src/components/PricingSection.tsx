@@ -134,10 +134,10 @@ const PricingSection = () => {
                     <div className="pricingCardPriceStrike">
                       {plan.price}<span className="pricingUnit">{plan.unit}</span>
                     </div>
-                    <span className="pricingDiscountBadge">75% OFF</span>
+                    <span className="pricingDiscountBadge">100% OFF</span>
                   </div>
-                  <div className="pricingCardPriceFree">$9.999 <span className="pricingCardPriceFreeUnit">· 1er mes</span></div>
-                  <div className="pricingTrialNote">Precio especial de lanzamiento · para nuevas escribanías</div>
+                  <div className="pricingCardPriceFree">Gratis <span className="pricingCardPriceFreeUnit">· 1er mes</span></div>
+                  <div className="pricingTrialNote">Probalo sin costo · para nuevas escribanías</div>
                 </>
               ) : plan.custom ? (
                 <>
@@ -179,7 +179,7 @@ const PricingSection = () => {
               rel="noopener noreferrer"
               className={`pricingCta${plan.featured ? ' pricingCtaFeatured' : ''}${plan.custom ? ' pricingCtaAMedida' : ''}`}
             >
-              {plan.trial ? 'Comenzar por $9.999 →' : plan.custom ? 'Cotizar ahora →' : 'Solicitar acceso →'}
+              {plan.trial ? 'Empezar gratis →' : plan.custom ? 'Cotizar ahora →' : 'Solicitar acceso →'}
             </a>
           </div>
         ))}
